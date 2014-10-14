@@ -37,7 +37,7 @@ public class Main {
 	public static void startGame(){
 		Test2.addText("game1 = Player vs Player\n");
 		Test2.addText("game2 = Player vs New AI\n");
-		Test2.addText("game3 = Player vs Normal AI that, from time to time, act retarded\n");
+		Test2.addText("game3 = Player vs Trained AI\n");
 		Test2.addText("game4 = Player vs Somewhat unbeatable AI\n");
 		Test2.addText("Select game:(1-4)\n\n");
 		String gameNum = input();

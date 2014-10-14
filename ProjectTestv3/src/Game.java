@@ -5,7 +5,8 @@ public class Game {
 	public int total;
 	public int player = 2;
 	public boolean repeat = true;
-	public AI bot;
+	public AI bot1;
+	public AI bot2;
 	public differentAI AI;
 	
 	public Game(){
@@ -17,26 +18,37 @@ public class Game {
 	public void gameStart(){
 		while(total>0 && repeat==true){
 			if(player==2){
-				player = 1;
-				Test2.addText("Player1: How many do you choose?(1-"+ MAX +")\n");
-				Test2.addText("Remaining:" + total + "\n");
-				String str1 = Main.input();
-				inputError(str1,1,MAX);
-				
+				playerOneMove();
 			}
 			else{
-				player = 2;
-				Test2.addText("Player2: How many do you choose?(1-" + MAX + ")\n");
-				Test2.addText("Remaining:" + total + "\n");
-				String str1 = Main.input();
-				inputError(str1,1,MAX);
+				playerTwoMove();
 			}
 		}
+		playerLoss();
 		if(repeat==true){
-		Test2.addText("Player" + player + " loses\n\n");
 		player = (int)(Math.random()*2+1);
 		restart();
 		}
+	}
+	
+	public void playerLoss(){
+		Test2.addText("Player" + player + " loses\n\n");
+	}
+	
+	public void playerOneMove(){
+		player = 1;
+		Test2.addText("Player1: How many do you choose?(1-"+ MAX +")\n");
+		Test2.addText("Remaining:" + total + "\n");
+		String str1 = Main.input();
+		inputError(str1,1,MAX);
+	}
+	
+	public void playerTwoMove(){
+		player = 2;
+		Test2.addText("Player2: How many do you choose?(1-" + MAX + ")\n");
+		Test2.addText("Remaining:" + total + "\n");
+		String str1 = Main.input();
+		inputError(str1,1,MAX);
 	}
 	
 	public void numError(String temp, int min, int max){
@@ -45,9 +57,11 @@ public class Game {
 			if(num>=min && num<=max){
 				total = num;
 				initial = num;
-				bot = new AI(total,MAX);
 				AI = new differentAI(total);
 				MAX = AI.findMAX(initial);
+				bot1 = new AI(total,MAX);
+				bot2 = new AI(total,MAX);
+				trainAI(bot1,bot2);
 				Test2.addText("\n");
 				gameStart();
 			}
@@ -65,12 +79,16 @@ public class Game {
 		}
 	}
 	
+	public void trainAI(AI bot1, AI bot2){
+	}
+	
 	public void inputError(String temp, int min, int max){
 		if(Main.isInteger(temp)){
 			int num = Integer.parseInt(temp);
 			if(num>=min && num<=max){
 				total -= num;
 				Test2.addText("Player1 chose " + num + " sticks\n\n");
+				AI.updatePlayerInput(num);
 			}
 			else{
 				Test2.addText("error: input int not within range of "+ min + " and " + max + "\n");
