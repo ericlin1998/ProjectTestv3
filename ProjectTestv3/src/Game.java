@@ -123,8 +123,7 @@ public class Game {
 					repeat = false;
 				}
 				else{
-					total = initial;
-					Test2.addText("\n");
+					gameRestart();
 				}
 			}
 			else{
@@ -139,6 +138,11 @@ public class Game {
 		else{
 			repeat = false;
 		}
+	}
+	
+	public void gameRestart(){
+		total = initial;
+		Test2.addText("\n");
 	}
 	
 	public static boolean checkInput(String str){

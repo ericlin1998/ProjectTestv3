@@ -15,6 +15,15 @@ public class Game4 extends Game{
 		player=1;
 	}
 	
+	public void gameRestart(){
+		Test2.addText("\nInitial amount randomized:(10-100)\n");
+		total = (int)(Math.random()*91)+10;
+		String str = Integer.toString(total);
+		AI.updatePlayerInput(0);
+		player = 2;
+		numError(str,10,100);
+	}
+	
 	public void playerTwoMove(){
 		player = 2;
 		Test2.addText("Remaining:" + total + "\n");
