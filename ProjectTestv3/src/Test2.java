@@ -18,6 +18,14 @@ public class Test2 extends JFrame implements ActionListener {
 	JTextField jtfInput;
 	JButton button1;
 	JButton button2;
+	JButton button3;
+	JButton button4;
+	JButton button5;
+	JButton button6;
+	JButton button7;
+	JButton button8;
+	JButton button9;
+	JButton button0;
 	static JTextArea jtAreaOutput;
 	String newline = "\n";
 	String text = "";
@@ -34,14 +42,23 @@ public class Test2 extends JFrame implements ActionListener {
 	public void createGui() {
 		//things/varaibles...etc
 		this.setTitle("Game");
-		textField = new JTextField(35);
+		this.setResizable(false);
+		textField = new JTextField(30);
 		textField.setText("Input");
 		textField.setEditable(false);
-		jtfInput = new JTextField(35);
-		button1 = new JButton("test");
-		button2 = new JButton("test2");
+		jtfInput = new JTextField(30);
+		button1 = new JButton("1");
+		button2 = new JButton("2");
+		button3 = new JButton("3");
+		button4 = new JButton("4");
+		button5 = new JButton("5");
+		button6 = new JButton("6");
+		button7 = new JButton("7");
+		button8 = new JButton("8");
+		button9 = new JButton("9");
+		button0 = new JButton("0");
 		jtfInput.addActionListener(this);
-		jtAreaOutput = new JTextArea(10, 35);
+		jtAreaOutput = new JTextArea(10, 30);
 		jtAreaOutput.setEditable(false);
 		JScrollPane scrollPane = new JScrollPane(jtAreaOutput, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		GridBagLayout gridBag = new GridBagLayout();
@@ -63,18 +80,42 @@ public class Test2 extends JFrame implements ActionListener {
 		GridBagConstraints gridCons3 = new GridBagConstraints();
 		gridCons3.gridwidth = GridBagConstraints.REMAINDER;
 		gridCons3.fill = GridBagConstraints.HORIZONTAL;
-		GridBagConstraints gridCons4 = new GridBagConstraints();
-		gridCons4.gridwidth = GridBagConstraints.WEST;
-		//gridCons4.fill = GridBagConstraints.HORIZONTAL;
-		GridBagConstraints gridCons5 = new GridBagConstraints();
-		gridCons5.gridwidth = GridBagConstraints.RELATIVE;
+		GridBagConstraints b1 = new GridBagConstraints();
+		b1.gridwidth = 1;
+		GridBagConstraints b2 = new GridBagConstraints();
+		b2.gridwidth = 2;
+		GridBagConstraints b3 = new GridBagConstraints();
+		b3.gridwidth = 3;
+		GridBagConstraints b4 = new GridBagConstraints();
+		b4.gridwidth = 4;
+		GridBagConstraints b5 = new GridBagConstraints();
+		b5.gridwidth = 5;
+		GridBagConstraints b6 = new GridBagConstraints();
+		b6.gridwidth = 6;
+		GridBagConstraints b7 = new GridBagConstraints();
+		b7.gridwidth = 7;
+		GridBagConstraints b8 = new GridBagConstraints();
+		b8.gridwidth = 8;
+		GridBagConstraints b9 = new GridBagConstraints();
+		b9.gridwidth = 9;
+		GridBagConstraints b0 = new GridBagConstraints();
+		b0.gridwidth = 0;
+		
 		
 		//put stuff on jframe
 		contentPane.add(scrollPane, gridCons2);
 		contentPane.add(textField, gridCons3);
 		contentPane.add(jtfInput, gridCons1);
-		contentPane.add(button1, gridCons4);
-		contentPane.add(button2, gridCons5);
+		contentPane.add(button1, b1);
+		contentPane.add(button2, b2);
+		contentPane.add(button3, b3);
+		contentPane.add(button4, b4);
+		contentPane.add(button5, b5);
+		contentPane.add(button6, b6);
+		contentPane.add(button7, b7);
+		contentPane.add(button8, b8);
+		contentPane.add(button9, b9);
+		contentPane.add(button0, b0);
 	}
 	
 	public static void addText(String str){
@@ -85,7 +126,7 @@ public class Test2 extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent evt) {
 		text = jtfInput.getText();
 		//jtAreaOutput.append(text);
-		getContentPane().remove(button2);
+		//getContentPane().remove(button2);
 		//getContentPane().update(getGraphics());
 	}
 	
