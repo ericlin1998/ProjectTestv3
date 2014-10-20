@@ -82,6 +82,7 @@ public class Test2 extends JFrame implements ActionListener {
 		contentPane.add(scrollPane, gridCons2);
 		contentPane.add(textField, gridCons3);
 		contentPane.add(jtfInput, gridCons1);
+		contentPane.add(button, gridCons4);
 	}
 	
 	public static void addText(String str){
