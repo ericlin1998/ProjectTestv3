@@ -1,4 +1,4 @@
-
+//Main game class, all games extend from this
 public class Game {
 	public int MAX;
 	public int initial;

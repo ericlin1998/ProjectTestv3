@@ -3,8 +3,6 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,13 +18,9 @@ public class Test2 extends JFrame implements ActionListener {
 	static JTextArea jtAreaOutput;
 	String newline = "\n";
 	String text = "";
-	/*
-	boolean repeat= true;
-	Scanner console = new Scanner(System.in);
-	int total;
-	int num = 5;
-	final int MIN = 0;
-	*/
+	boolean bframeTrue = false;
+	ButtonsFrame frame = new ButtonsFrame();
+	
 	public Test2() {
 		createGui();
 	}
@@ -78,6 +72,21 @@ public class Test2 extends JFrame implements ActionListener {
 		gridCons4.gridwidth = GridBagConstraints.REMAINDER;
 		gridCons4.fill = GridBagConstraints.HORIZONTAL;
 		
+		//button
+		button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+            	if(bframeTrue){
+            		frame.setVisible(false);
+            		bframeTrue = false;
+            	}
+            	else{
+            		frame.pack();
+        			frame.setVisible(true);
+        			bframeTrue = true;
+            		}
+            	}
+		});
+		
 		//put stuff on jframe
 		contentPane.add(scrollPane, gridCons2);
 		contentPane.add(textField, gridCons3);
@@ -92,9 +101,6 @@ public class Test2 extends JFrame implements ActionListener {
 	
 	public void actionPerformed(ActionEvent evt) {
 		text = jtfInput.getText();
-		//jtAreaOutput.append(text);
-		//getContentPane().remove(button2);
-		//getContentPane().update(getGraphics());
 	}
 	
 	
@@ -107,6 +113,7 @@ public class Test2 extends JFrame implements ActionListener {
 		text = "";
 	}
 	
+/*	tesing to open frame
 	public static void main(String[] args) {
 		Test2 jtfTfDemo = new Test2();
 		jtfTfDemo.pack();
@@ -118,4 +125,5 @@ public class Test2 extends JFrame implements ActionListener {
 		});
 		jtfTfDemo.setVisible(true);
 	}
+*/	
 }

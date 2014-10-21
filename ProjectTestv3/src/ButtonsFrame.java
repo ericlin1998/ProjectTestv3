@@ -3,8 +3,6 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -151,6 +149,7 @@ public class ButtonsFrame  extends JFrame{
 		contentPane.add(buttonE, bE);
 	}
 	
+/*	testing to open frame
 	public static void main(String[] args) {
 		ButtonsFrame frame = new ButtonsFrame();
 		frame.pack();
@@ -162,4 +161,5 @@ public class ButtonsFrame  extends JFrame{
 		});
 		frame.setVisible(true);
 	}
+*/	
 }

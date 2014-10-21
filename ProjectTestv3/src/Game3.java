@@ -4,6 +4,7 @@
  * 		Player vs trained AI
  */
 
+//sets a trained AI
 public class Game3 extends Game2{
 	private final int TIMES = 100000;
 	

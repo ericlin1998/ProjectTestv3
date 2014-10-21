@@ -17,7 +17,7 @@ public class Main {
 	
 	
 	public static void main(String[] args){
-		
+		//opens jframe to display game
 		window = new Test2();
 		window.pack();
 		window.addWindowListener(new WindowAdapter() {
@@ -34,6 +34,7 @@ public class Main {
 		while(repeat);
 	}
 	
+	//prompts for gameNum
 	public static void startGame(){
 		Test2.addText("game1 = Player vs Player\n");
 		Test2.addText("game2 = Player vs New AI\n");
@@ -47,6 +48,7 @@ public class Main {
 		}
 	}
 	
+	//opens selected game
 	public static void game(int num){
 		if(num==1){
 			game1();
@@ -107,6 +109,7 @@ public class Main {
 		return gameNum;
 	}
 	
+	//checks gameNum input
 	public static void gameNumError(String gameNum, int min, int max){
 		if(isInteger(gameNum)){
 			int num = Integer.parseInt(gameNum);
@@ -127,6 +130,7 @@ public class Main {
 		}
 	}
 	
+	//checks if to restart
 	public static void restartError(String num, int min, int max){
 		if(isInteger(num)){
 			int num2 = Integer.parseInt(num);
@@ -156,6 +160,7 @@ public class Main {
 		}
 	}
 	
+	//checks if str is int
 	public static boolean isInteger( String input ) {
 	    try {
 	        Integer.parseInt( input );
@@ -166,6 +171,7 @@ public class Main {
 	    }
 	}
 	
+	//check if "endgame"
 	public static boolean checkInput(String str){
 		if(str.toUpperCase().equals("ENDGAME")){
 			Test2.addText("GAME ENDED");
@@ -179,6 +185,7 @@ public class Main {
 		}
 	}
 	
+	//prompts if to restart
 	public static void restart(){
 		Test2.addText("Play another game?(0-1)" + "\n");
 		restartError(input(),0,1);

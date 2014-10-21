@@ -4,6 +4,7 @@
  * 		Player vs AI
  */
 
+//sets a new AI
 public class Game2 extends Game{
 	public void playerTwoMove(){
 		player = 2;

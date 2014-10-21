@@ -4,7 +4,7 @@
  * 		Game4 class
  */
 
-
+//has a differentAI
 public class Game4 extends Game{
 	public void playerOneMove(){
 		int tempNum = AI.selectNum();

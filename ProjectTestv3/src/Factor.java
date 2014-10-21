@@ -5,7 +5,7 @@
  */
 
 public class Factor {
-
+//basic factoring from previous assignments, used in game for differntAI
 	public static int[] factor(int num){
 		int temp1 = 1;
 		int temp2 = 1;
